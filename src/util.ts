@@ -134,30 +134,30 @@ export const distanceOfTimeInWords = (seconds: number, relativeToNow: boolean = 
 
   if (seconds < MINUTE) {
     // 1 minute
-    when = `${seconds} ${plural('second', seconds)}`;
+    when = `${seconds}s`;
   } else if (seconds < HOUR) {
     // 1 hour
     distance = Math.round(seconds / 60);
-    when = `${distance} ${plural('minute', distance)}`;
+    when = `${distance}m`;
   } else if (seconds < DAY) {
     // 1 day
     distance = Math.round(seconds / (60 * 60));
-    when = `${distance} ${plural('hour', distance)}`;
+    when = `${distance}h`;
   } else if (seconds < WEEK) {
     // 1 week
     distance = Math.round(seconds / (60 * 60 * 24));
-    when = `${distance} ${plural('day', distance)}`;
+    when = `${distance}d`;
   } else if (seconds < MONTH) {
     // 1 month
     distance = Math.round(seconds / (60 * 60 * 24 * 7));
-    when = `${distance} ${plural('week', distance)}`;
+    when = `${distance}w`;
   } else if (seconds < YEAR) {
     // # 1 year
     distance = Math.round(seconds / (60 * 60 * 24 * (365 / 12)));
-    when = `${distance} ${plural('month', distance)}`;
+    when = `${distance}m`;
   } else {
     distance = Math.round(seconds / (60 * 60 * 24 * 365));
-    when = `${distance} ${plural('year', distance)}`;
+    when = `${distance}y`;
   }
 
   if (!relativeToNow) {
